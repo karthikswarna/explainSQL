@@ -8,57 +8,46 @@
 			"result": [
 				{
 					"type": "identifier",
-					"variant": "column",
-					"name": "pants"
-				},
-				{
-					"type": "identifier",
-					"variant": "column",
-					"name": "shirts"
+					"variant": "star",
+					"name": "*"
 				}
 			],
 			"from": {
 				"type": "identifier",
 				"variant": "table",
-				"name": "laundry"
+				"name": "customers"
 			},
 			"where": [
 				{
 					"type": "expression",
 					"format": "binary",
 					"variant": "operation",
-					"operation": "and",
-					"left": {
-						"type": "expression",
-						"format": "binary",
-						"variant": "operation",
-						"operation": ">",
-						"left": {
-							"type": "identifier",
-							"variant": "column",
-							"name": "pants.cost"
-						},
-						"right": {
-							"type": "literal",
-							"variant": "decimal",
-							"value": "50"
-						}
-					},
+					"operation": "not in",
 					"right": {
 						"type": "expression",
-						"format": "binary",
-						"variant": "operation",
-						"operation": ">",
-						"left": {
-							"type": "identifier",
-							"variant": "column",
-							"name": "shirts.cost"
-						},
-						"right": {
-							"type": "literal",
-							"variant": "decimal",
-							"value": "30"
-						}
+						"variant": "list",
+						"expression": [
+							{
+								"type": "literal",
+								"variant": "text",
+								"value": "Germany"
+							},
+							{
+								"type": "literal",
+								"variant": "text",
+								"value": "France"
+							},
+							{
+								"type": "literal",
+								"variant": "text",
+								"value": "UK"
+							}
+						]
+					},
+					"left": {
+						"type": "identifier",
+						"variant": "column",
+						"name": "country"
 					}
 				}
 			]
