@@ -2,4 +2,4 @@
 
 A tool for explaining SQL commands by interactive visualizations.
 
-Inspired by [https://explainshell.com/](explainshell)
+Inspired by [explainshell](https://explainshell.com/)
